@@ -27,14 +27,19 @@ askButton.addEventListener("click", async function () {
   answerElement.textContent = "Thinking...";
   imageResults.style.display = "none";
 
+  //http://localhost:8000
+
   try {
-    const response = await fetch("http://localhost:8000/api/v1/chat/ask", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ question }),
-    });
+    const response = await fetch(
+      "https://aichatapp-cfo1.onrender.com/api/v1/chat/ask",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question }),
+      }
+    );
 
     const data = await response.json();
     answerElement.textContent = data.response;
