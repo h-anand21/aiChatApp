@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://dainty-heliotrope-95a3b2.netlify.app/",
+    origin: "https://dainty-heliotrope-95a3b2.netlify.app",
   })
 );
 app.use(express.urlencoded({ extended: true }));
